@@ -1,0 +1,22 @@
+version: '3'
+services:
+  magic:
+    
+    # image: southamerica-east1-docker.pkg.dev/gcp-project/folder/image:tag
+    command: mage start BIX-MAGE-PIPELINES
+    env_file:
+      - dev.env
+    build:
+      context: ./docker/mageai
+      dockerfile: Dockerfile
+    environment:
+      # USER_CODE_PATH: ../${PROJECT_NAME}
+      USER_CODE_PATH: /home/src/BIX-MAGE-PIPELINES
+      ENV: dev
+      # DBT_PROFILES_DIR: path
+    ports:
+      - 6789:6789
+    volumes:
+      - .:/home/src/BIX-MAGE-PIPELINES
+      # - $HOME/.config/gcloud/application_default_credentials.json:/home/src/default_repo/application_default_credentials.json
+    restart: on-failure:5

@@ -1,0 +1,10 @@
+version: 0.1.1
+default:
+  # PostgresSQL
+  POSTGRES_CONNECT_TIMEOUT: placeholder
+  POSTGRES_DBNAME: placeholder
+  POSTGRES_SCHEMA: placeholder
+  POSTGRES_USER: placeholder
+  POSTGRES_PASSWORD: placeholder
+  POSTGRES_HOST: placeholder
+  POSTGRES_PORT: placeholder
