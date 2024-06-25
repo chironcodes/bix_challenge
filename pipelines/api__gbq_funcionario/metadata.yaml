@@ -1,0 +1,120 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    disable_output_preview: false
+    dynamic: true
+  downstream_blocks:
+  - api__extract_funcionario
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: main__extract_funcionario
+  retry_config: {}
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks: []
+  uuid: main__extract_funcionario
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    dynamic: false
+  downstream_blocks:
+  - gbq__load_funcionario
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: api__extract_funcionario
+  retry_config: {}
+  status: failed
+  timeout: null
+  type: data_loader
+  upstream_blocks:
+  - main__extract_funcionario
+  uuid: api__extract_funcionario
+- all_upstream_blocks_executed: false
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - dbt/bix_challenge_dbt/models/staging/stg_funcionario
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: gbq__load_funcionario
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks:
+  - api__extract_funcionario
+  uuid: gbq__load_funcionario
+- all_upstream_blocks_executed: false
+  color: null
+  configuration:
+    dbt_project_name: dbt/bix_challenge_dbt
+    file_path: dbt/bix_challenge_dbt/models/staging/stg_funcionario.sql
+    file_source:
+      path: dbt/bix_challenge_dbt/models/staging/stg_funcionario.sql
+      project_path: dbt/bix_challenge_dbt
+    limit: 1000
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: dbt/bix_challenge_dbt/models/staging/stg_funcionario
+  retry_config: null
+  status: not_executed
+  timeout: null
+  type: dbt
+  upstream_blocks:
+  - gbq__load_funcionario
+  uuid: dbt/bix_challenge_dbt/models/staging/stg_funcionario
+cache_block_output_in_memory: false
+callbacks: []
+concurrency_config: {}
+conditionals:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: check_volumetria
+  retry_config: null
+  status: not_executed
+  timeout: null
+  type: conditional
+  upstream_blocks:
+  - main__extract_funcionario
+  uuid: check_volumetria
+created_at: '2024-06-22 22:01:18.249201+00:00'
+data_integration: null
+description: null
+executor_config: {}
+executor_count: 1
+executor_type: null
+extensions: {}
+name: api__gbq_funcionario
+notification_config: {}
+remote_variables_dir: null
+retry_config: {}
+run_pipeline_in_one_process: false
+settings:
+  triggers: null
+spark_config: {}
+tags:
+- batch
+- api
+- bigquery
+- funcionario
+type: python
+uuid: api__gbq_funcionario
+variables_dir: /home/src/mage_data/BIX-MAGE-PIPELINES
+widgets: []

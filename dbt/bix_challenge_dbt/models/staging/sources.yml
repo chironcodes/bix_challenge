@@ -1,0 +1,47 @@
+version: 2
+sources:
+- name: raw
+  database: adilton # nome do projeto
+  schema: raw
+  tables:
+    - name: categoria
+      identifier: categoria
+      description: Tabela que contém informações sobre categorias de produtos.
+      columns:
+        - name: id
+          description: "Identificador único da categoria."
+          tests:
+            - not_null
+            - unique
+        - name: nome_categoria
+          description: "Nome da categoria de produto."
+    
+
+    - name: funcionario
+      description: Tabela que armazena dados dos funcionários.
+      columns:
+        - name: id
+          description: "Identificador único do funcionário."
+          tests:
+            - not_null
+            - unique
+        - name: nome
+          description: "Nome do funcionário."
+      
+
+    - name: venda
+      description: Tabela que registra informações sobre vendas realizadas.
+      columns:
+        - name: id_venda
+          description: "Identificador único da venda."
+          tests:
+            - not_null
+            - unique
+        - name: id_funcionario
+          description: "Identificador do funcionário responsável pela venda."
+        - name: id_categoria
+          description: "Identificador da categoria de produto vendido."
+        - name: data_venda
+          description: "Data em que a venda foi realizada."
+        - name: venda
+          description: "Valor total da venda realizada."

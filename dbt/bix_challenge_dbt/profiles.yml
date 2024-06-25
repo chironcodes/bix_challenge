@@ -1,0 +1,16 @@
+bix_challenge_dbt:
+  outputs:
+    dev:
+      dataset: dbt_prod
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      location: US
+      method: oauth
+      priority: interactive
+      project: adilton
+      threads: 10
+      type: bigquery
+      
+  target: dev
+
+# dbt debug --profiles-dir profiles/

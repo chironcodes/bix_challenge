@@ -1,74 +1,70 @@
 blocks:
 - all_upstream_blocks_executed: true
   color: null
-  configuration:
-    file_path: data_loaders/pg__extract_venda.py
-    file_source:
-      path: data_loaders/pg__extract_venda.py
+  configuration: {}
   downstream_blocks:
-  - gbq__load_venda
+  - gbq__load_categoria
   executor_config: null
   executor_type: local_python
   has_callback: false
   language: python
-  name: pg__extract_venda
+  name: gcs__extract_categoria
   retry_config: null
   status: executed
   timeout: null
   type: data_loader
   upstream_blocks: []
-  uuid: pg__extract_venda
+  uuid: gcs__extract_categoria
 - all_upstream_blocks_executed: true
   color: null
   configuration: {}
   downstream_blocks:
-  - dbt/bix_challenge_dbt/models/staging/stg_venda
+  - dbt/bix_challenge_dbt/models/staging/stg_categoria
   executor_config: null
   executor_type: local_python
   has_callback: false
   language: python
-  name: gbq__load_venda
+  name: gbq__load_categoria
   retry_config: null
-  status: executed
+  status: updated
   timeout: null
   type: data_exporter
   upstream_blocks:
-  - pg__extract_venda
-  uuid: gbq__load_venda
-- all_upstream_blocks_executed: true
+  - gcs__extract_categoria
+  uuid: gbq__load_categoria
+- all_upstream_blocks_executed: false
   color: null
   configuration:
     dbt_project_name: dbt/bix_challenge_dbt
-    file_path: dbt/bix_challenge_dbt/models/staging/stg_venda.sql
+    file_path: dbt/bix_challenge_dbt/models/staging/stg_categoria.sql
     file_source:
-      path: dbt/bix_challenge_dbt/models/staging/stg_venda.sql
+      path: dbt/bix_challenge_dbt/models/staging/stg_categoria.sql
       project_path: dbt/bix_challenge_dbt
-    limit: 1000
   downstream_blocks: []
   executor_config: null
   executor_type: local_python
   has_callback: false
   language: sql
-  name: dbt/bix_challenge_dbt/models/staging/stg_venda
+  name: stg_categoria
   retry_config: null
-  status: updated
+  status: not_executed
   timeout: null
   type: dbt
   upstream_blocks:
-  - gbq__load_venda
-  uuid: dbt/bix_challenge_dbt/models/staging/stg_venda
+  - gbq__load_categoria
+  uuid: dbt/bix_challenge_dbt/models/staging/stg_categoria
 cache_block_output_in_memory: false
 callbacks: []
 concurrency_config: {}
 conditionals: []
-created_at: '2024-06-21 01:29:42.634166+00:00'
+created_at: '2024-06-22 20:59:25.802036+00:00'
 data_integration: null
 description: null
 executor_config: {}
 executor_count: 1
 executor_type: null
 extensions: {}
-name: pq__gbq_venda
+name: gcs__gbq_categoria
 notification_config: {}
 remote_variables_dir: null
 retry_config: {}
@@ -78,10 +74,10 @@ settings:
 spark_config: {}
 tags:
 - batch
-- postgres
+- gcs
 - bigquery
-- venda
+- categoria
 type: python
-uuid: pq__gbq_venda
+uuid: gcs__gbq_categoria
 variables_dir: /home/src/mage_data/BIX-MAGE-PIPELINES
 widgets: []

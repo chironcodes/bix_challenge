@@ -1,0 +1,28 @@
+sources:
+- description: Dataframes Mage upstream blocks
+  loader: mage
+  name: mage_bix_challenge_dbt
+  schema: dbt_prod
+  tables:
+  - description: Dataframe for block `gbq__load_funcionario` of the `api__gbq_funcionario`
+      mage pipeline.
+    identifier: mage_api__gbq_funcionario_gbq__load_funcionario
+    meta:
+      block_uuid: gbq__load_funcionario
+      pipeline_uuid: api__gbq_funcionario
+    name: api__gbq_funcionario_gbq__load_funcionario
+  - description: Dataframe for block `gbq__load_categoria` of the `gcs__gbq_categoria`
+      mage pipeline.
+    identifier: mage_gcs__gbq_categoria_gbq__load_categoria
+    meta:
+      block_uuid: gbq__load_categoria
+      pipeline_uuid: gcs__gbq_categoria
+    name: gcs__gbq_categoria_gbq__load_categoria
+  - description: Dataframe for block `gbq__load_venda` of the `pq__gbq_venda` mage
+      pipeline.
+    identifier: mage_pq__gbq_venda_gbq__load_venda
+    meta:
+      block_uuid: gbq__load_venda
+      pipeline_uuid: pq__gbq_venda
+    name: pq__gbq_venda_gbq__load_venda
+version: 2

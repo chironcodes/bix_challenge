@@ -1,10 +1,12 @@
 version: 0.1.1
-default:
+
+dev:
   # PostgresSQL
-  POSTGRES_CONNECT_TIMEOUT: placeholder
-  POSTGRES_DBNAME: placeholder
-  POSTGRES_SCHEMA: placeholder
-  POSTGRES_USER: placeholder
-  POSTGRES_PASSWORD: placeholder
-  POSTGRES_HOST: placeholder
-  POSTGRES_PORT: placeholder
+  POSTGRES_CONNECT_TIMEOUT: 10
+  POSTGRES_DBNAME: postgres
+  POSTGRES_SCHEMA: venda
+  POSTGRES_USER: postgres
+  POSTGRES_PASSWORD: "postgres"
+  POSTGRES_HOST: 127.0.0.1
+  POSTGRES_PORT: 5432
+  GOOGLE_SERVICE_ACC_KEY_FILEPATH: /home/src/mage_data/mageai-job-runner.json

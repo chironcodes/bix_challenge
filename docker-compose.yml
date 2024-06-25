@@ -10,13 +10,13 @@ services:
       context: ./docker/mageai
       dockerfile: Dockerfile
     environment:
-      # USER_CODE_PATH: ../${PROJECT_NAME}
       USER_CODE_PATH: /home/src/BIX-MAGE-PIPELINES
       ENV: dev
-      # DBT_PROFILES_DIR: path
+ 
+      GOOGLE_APPLICATION_CREDENTIALS: /home/src/mage_data/mageai-job-runner.json
     ports:
       - 6789:6789
     volumes:
       - .:/home/src/BIX-MAGE-PIPELINES
-      # - $HOME/.config/gcloud/application_default_credentials.json:/home/src/default_repo/application_default_credentials.json
+      - ./secrets/mageai-job-runner.json:/home/src/mage_data/mageai-job-runner.json
     restart: on-failure:5
