@@ -4,7 +4,7 @@ WITH source AS (
 
 renamed AS (
     SELECT
-        id AS ID_CATEGORIA,
+        CAST(id AS INTEGER) AS ID_CATEGORIA,
         nome_categoria AS NME_CATEGORIA
     FROM 
         source

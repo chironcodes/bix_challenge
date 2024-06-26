@@ -14,3 +14,4 @@ bix_challenge_dbt:
   target: dev
 
 # dbt debug --profiles-dir profiles/
+# dbt build --full-refresh
