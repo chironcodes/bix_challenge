@@ -36,8 +36,16 @@ models:
           - unique
       - name: ID_FUNCIONARIO
         description: "Identificador do funcionário responsável pela venda."
+        tests:
+          - relationships:
+              to: ref('funcionario')
+              field: id
       - name: ID_CATEGORIA
         description: "Identificador da categoria de produto vendido."
+        tests:
+          - relationships:
+              to: ref('categoria')
+              field: id
       - name: DT_VENDA
         description: "Data em que a venda foi realizada."
       - name: VL_VENDA

@@ -38,15 +38,14 @@ blocks:
 - all_upstream_blocks_executed: true
   color: null
   configuration: {}
-  downstream_blocks:
-  - dbt/bix_challenge_dbt/models/staging/stg_funcionario
+  downstream_blocks: []
   executor_config: null
   executor_type: local_python
   has_callback: false
   language: python
   name: gbq__load_funcionario
   retry_config: null
-  status: updated
+  status: executed
   timeout: null
   type: data_loader
   upstream_blocks:
@@ -56,9 +55,9 @@ blocks:
   color: null
   configuration:
     dbt_project_name: dbt/bix_challenge_dbt
-    file_path: dbt/bix_challenge_dbt/models/staging/stg_funcionario.sql
+    file_path: dbt/bix_challenge_dbt/models/mart/mart_rep_sales.sql
     file_source:
-      path: dbt/bix_challenge_dbt/models/staging/stg_funcionario.sql
+      path: dbt/bix_challenge_dbt/models/mart/mart_rep_sales.sql
       project_path: dbt/bix_challenge_dbt
     limit: 1000
   downstream_blocks: []
@@ -66,14 +65,13 @@ blocks:
   executor_type: local_python
   has_callback: false
   language: sql
-  name: dbt/bix_challenge_dbt/models/staging/stg_funcionario
+  name: dbt/bix_challenge_dbt/models/mart/mart_rep_sales
   retry_config: null
-  status: not_executed
+  status: executed
   timeout: null
   type: dbt
-  upstream_blocks:
-  - gbq__load_funcionario
-  uuid: dbt/bix_challenge_dbt/models/staging/stg_funcionario
+  upstream_blocks: []
+  uuid: dbt/bix_challenge_dbt/models/mart/mart_rep_sales
 cache_block_output_in_memory: false
 callbacks: []
 concurrency_config: {}
