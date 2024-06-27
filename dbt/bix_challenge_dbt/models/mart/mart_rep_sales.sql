@@ -41,4 +41,4 @@ LEFT JOIN categorias AS c
 LEFT JOIN funcionario AS f
     ON a.ID_FUNCIONARIO = f.ID_FUNCIONARIO
 WHERE
-    a.DT_VENDA >= date_add(current_date(), interval -4 day)
+    a.DT_VENDA >= date_add(current_date(), interval -3650 day)
