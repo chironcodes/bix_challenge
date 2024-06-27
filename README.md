@@ -1,7 +1,7 @@
 
 
 
-# Bix_challenga
+# Bix_challenge
 
 
 # Creating a service account that will work with mageai
@@ -33,9 +33,14 @@ gcloud projects add-iam-policy-binding $GOOGLE_CLOUD_PROJECT \
     
 ```
 
-Export it locally
-```sh
 
+## Export it locally
+```sh
+# Create `secrets` folder
+
+mkdir secrets
+
+# Create and export service account
 gcloud iam service-accounts keys create secrets/mageai-job-runner.json \
     --iam-account $MAGEAI_SERVICE_ACCOUNT
 
@@ -44,7 +49,9 @@ tr -d '\n' < secrets/mageai-job-runner.json > secrets/mageai-job-runner-oneline.
 
 ```
 
-
+## Run locally
 ```sh
+
+docker compose up
 
 ```
