@@ -1,13 +1,8 @@
 version: 2
 
 models:
-  - name: marts_rep_sales
-    description:  >
-      @Descrição: Este data mart contém dados de vendas para fins de relatório.
-      @Dimensões: Dimensões relacionadas às transações de vendas, incluindo funcionário, categoria e vendas.
-      @Métricas: Métricas agregadas como valor total de vendas.
-      @Granularidade: Agregado no nível da transação.
-      @Fonte: Dados provenientes de bancos de dados operacionais de vendas.
+  - name: mart_rep_sales
+    description:   Este data mart contém dados de vendas para fins de relatório.
     latest_version: 1
     columns:
         - name: ID_VENDA

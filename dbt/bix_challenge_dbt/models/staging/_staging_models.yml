@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: stg_categoria
+    identifier: categoria
+    description: Tabela que contém informações sobre categorias de produtos.
+    columns:
+      - name: ID_CATEGORIA
+        description: "Identificador único da categoria."
+        tests:
+          - not_null
+          - unique
+      - name: NME_CATEGORIA
+        description: "Nome da categoria de produto."
+  
+
+  - name: stg_funcionario
+    description: Tabela que armazena dados dos funcionários.
+    columns:
+      - name: ID_FUNCIONARIO
+        description: "Identificador único do funcionário."
+        tests:
+          - not_null
+          - unique
+      - name: NME_FUNCIONARIO
+        description: "Nome do funcionário."
+    
+
+  - name: stg_venda
+    description: Tabela que registra informações sobre vendas realizadas.
+    columns:
+      - name: ID_VENDA
+        description: "Identificador único da venda."
+        tests:
+          - not_null
+          - unique
+      - name: ID_FUNCIONARIO
+        description: "Identificador do funcionário responsável pela venda."
+      - name: ID_CATEGORIA
+        description: "Identificador da categoria de produto vendido."
+      - name: DT_VENDA
+        description: "Data em que a venda foi realizada."
+      - name: VL_VENDA
+        description: "Valor total da venda realizada."
