@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: mart_rep_sales
+    description:   Este data mart contém dados de vendas para fins de relatório.
+    latest_version: 1
+    columns:
+        - name: ID_VENDA
+          description: Identificador único para cada transação de venda.
+        - name: ID_FUNCIONARIO
+          description: Identificador do funcionário associado à venda.
+        - name: NME_FUNCIONARIO
+          description: Nome do funcionário que realizou a venda.
+        - name: ID_CATEGORIA
+          description: Identificador da categoria de venda.
+        - name: NME_CATEGORIA
+          description: Nome da categoria de venda.
+        - name: VL_VENDA
+          description: Valor total da venda.
+        - name: DT_VENDA
+          description: Data da transação de venda.
+    versions:
+      - v: 1

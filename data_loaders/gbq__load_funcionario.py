@@ -24,12 +24,11 @@ def load_data_from_big_query(df, *args, **kwargs):
         df,
         table_id,
         if_exists='append',  # Specify resolution policy if table name already exists
-        overwrite_types=None, # Specify the column types to overwrite in a dictionary
         unique_conflict_method='UPDATE',
         unique_constraints=['id'],
     )
 
-    return {'message':f'Funcionário {id} inserido'}
+    return {'message':f'Funcionário inserido'}
 
 
 @test

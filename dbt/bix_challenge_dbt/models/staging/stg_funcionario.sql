@@ -4,7 +4,7 @@ WITH source AS (
 
 renamed AS (
     SELECT
-        id AS ID_FUNCIONARIO,
+        CAST(id AS INTEGER) AS ID_FUNCIONARIO,
         nome AS NME_FUNCIONARIO
     FROM 
         source
